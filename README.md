@@ -86,7 +86,7 @@ COPY ./dist /usr/share/nginx/html/
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-## Dockerfile ASP Core API
+# Dockerfile ASP Core API
 ```
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
