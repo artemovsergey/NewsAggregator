@@ -11,6 +11,9 @@
 - База данных: PostgreSQL 14
 - ASP .NET Core 8 (REST API)
 - Entity Framework
+- Material Design
+- Angular
+- Entity Framework
 - Docker Compose
 
 
