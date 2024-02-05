@@ -6,32 +6,20 @@ networks:
 
 services:
 
-  # nginx:
-  #   build:
-  #     context: ./NewsAggregator.Angular
-  #     dockerfile: Dockerfile
-  #   container_name: ContainerNginxAngular
-  #   # volumes:
-  #   #   - ./nginx.conf:/etc/nginx/nginx.conf
-  #   ports:
-  #     - "80:80"
-  #   depends_on:
-  #     - backend
-  #   networks:
-  #     - asp-dotnet-network
+  nginx:
+    build:
+      context: ./NewsAggregator.Angular
+      dockerfile: Dockerfile
+    container_name: ContainerNginxAngular
+    # volumes:
+    #   - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - asp-dotnet-network
       
-  # angular:
-  #   build:
-  #     context: ./NewsAggregator.Angular
-  #     dockerfile: Dockerfile
-  #   container_name: Container Angular 
-  #   ports:
-  #     - "4200:4200"
-  #   networks:
-  #     - asp-dotnet-network
-  #   depends_on:
-  #     - api
-
   backend:
     restart: always
     build:
