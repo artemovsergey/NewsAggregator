@@ -8,7 +8,7 @@
 Стек: C#, PostgreSQL 14, EF, Docker
 
 ### Стек технологий:
-- База данных: PostgreSQL 14
+- База данных: PostgreSQL
 - ASP .NET Core 8 (REST API)
 - Entity Framework
 - Material Design
