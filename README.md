@@ -62,3 +62,12 @@ services:
 volumes:
  postgres_data:
 ```
+
+# Dockerfile Angular Nginx
+
+```
+FROM nginx:alpine
+COPY ./dist /usr/share/nginx/html/
+CMD ["nginx", "-g", "daemon off;"]
+
+```
