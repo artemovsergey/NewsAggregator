@@ -7,6 +7,18 @@
 Результат: Docker Compose, сделать миграции, не менее 2 рабочих адресов новостных сайтов для проверки
 Стек: C#, PostgreSQL 14, EF, Docker
 
+### Стек технологий:
+- База данных: PostgreSQL 14
+- ASP .NET Core 8 (REST API)
+- Entity Framework
+- Docker Compose
+
+
+# Варианты использования
+
+![](https://www.planttext.com/api/plantuml/svg/XL9BRi903DtFATwoNQ1UWJEK0rGZcDA8aA0mNLHL9JvYHHUzGQ-G0Ya1IhY2VQFQar8LeOfDndv-VdwsqXnwc_d7Vco6lIX1bWwTYTszXq-HHTq7ZqwKkRQFqYGm1ZQpVGniksUxhkMVOWSjswGREsFRFir0xrJHZbzfBU-2SfvGeRdv9OBUQCaZWPUXNF7eZlQ1NV4uy3TuDlXN2eq6hkWWu8foAdW2QSz12vuf1W5NgizZdEXglAGAF1R6HW3fAMb79OAN2hUjLaFoWlOyuVdrPGioHQJfImiIbpL5oW8Ug9HlHLkSBIV4DUX3NAnvZh35NcREUNPvfefkVwP8CeCU0lKrT81Q4a8Xvq3TgN5vSznq0T7DTLt9LJzm_peiBvi82ZpYANqUhPmeX37rVjEp_SoBQRgaet_TDm00)
+
+
 # Docker Compose
 
 ```yml
@@ -83,4 +95,5 @@ COPY ["./publish", "."]
 ENTRYPOINT ["dotnet", "NewsAggregator.API.dll"]
 # ENTRYPOINT ["dotnet", "NewsAggregator.API.dll", "--urls", "http://localhost:7281"]
 ```
+
 
