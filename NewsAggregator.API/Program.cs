@@ -15,16 +15,20 @@ builder.Services.AddScoped<INewsService, NewsService>();
 string connection = builder.Configuration.GetConnectionString("PostgreSQLDocker");
 builder.Services.AddDbContext<NewsAggregationContext>(options => options.UseNpgsql(connection));
 
+builder.Services.AddCors();
+
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
- 
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
-app.UseSwagger();
-app.UseSwaggerUI();
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost"));
 
 app.UseHttpsRedirection();
 app.MapControllers();
+
+
 
 app.Run();

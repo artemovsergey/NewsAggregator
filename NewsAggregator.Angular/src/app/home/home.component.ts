@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
 
   public displayedColumns: string[] = ['id', 'title', 'content', 'datepublic','link'];
-  public users!: MatTableDataSource<News>;
+  public news!: MatTableDataSource<News>;
 
   defaultPageIndex: number = 0;
   defaultPageSize: number = 10;
@@ -48,7 +48,8 @@ export class HomeComponent implements OnInit {
   }
 
   getData(event: PageEvent) {
-    var url = environment.baseUrl + 'api/News';
+    var url = environment.baseUrl + '/api/news';
+    console.log("url = " + url);
     var params = new HttpParams()
       .set("pageIndex", event.pageIndex.toString())
       .set("pageSize", event.pageSize.toString())
@@ -70,7 +71,7 @@ export class HomeComponent implements OnInit {
         this.paginator.length = result.totalCount;
         this.paginator.pageIndex = result.pageIndex;
         this.paginator.pageSize = result.pageSize;
-        this.users = new MatTableDataSource<News>(result.data);
+        this.news = new MatTableDataSource<News>(result.data);
       }, error => console.error(error));
   }
 

@@ -7,7 +7,7 @@ import { AngularMaterialModule } from './angular-material.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -17,7 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     HomeComponent,
-    FetchDataComponent,
+
     NavMenuComponent
   ],
   imports: [

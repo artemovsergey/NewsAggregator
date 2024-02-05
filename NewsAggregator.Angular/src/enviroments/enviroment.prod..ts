@@ -1,4 +1,4 @@
 export const environment = {
-  production: false,
-  baseUrl: "http://backend:8080"
+  production: true,
+  baseUrl: "http://localhost:8080"
 };

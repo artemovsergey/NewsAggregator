@@ -2,14 +2,20 @@
 
   <mat-toolbar color="primary">
 
-    <a mat-flat-button color="primary" [routerLink]="['/']">
-        Lenta.ru
-    </a>
-
-    <a mat-flat-button color="primary" [routerLink]="['/fetch-data']">
-      Habr.com
-    </a>
+    <p>
+      <a mat-flat-button color = "white" [style]="{'background-color': isLoadingHabr ? 'white' : 'primary'}" (click)="parseHabr()" [disabled]="isLoadingHabr">
+        {{ isLoadingHabr ? 'Загрузка' : 'Habr.com' }}   
+      </a>
+    </p>
+    <br>
+    <br>
+    <br>
+    <p>
+      <a mat-flat-button color = "white" [style]="{'background-color': isLoadingLenta ? 'white' : 'primary'}" (click)="parseLenta()" [disabled]="isLoadingLenta" >
+        {{ isLoadingLenta ? 'Загрузка' : 'Lenta.ru' }} 
+      </a>
+    </p>
 
   </mat-toolbar>
 
-</header>
+</header> 

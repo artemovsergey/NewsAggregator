@@ -20,7 +20,7 @@ namespace NewsAggregator.API.Controllers
     {
 
         private const string lentarss = "https://lenta.ru/rss";
-        private const string harbrss = "https://habr.com/ru/rss/articles/";
+        private const string habrss = "https://habr.com/ru/rss/articles/";
 
         private readonly NewsAggregationContext _context;
         private readonly INewsService _newsService;
@@ -67,17 +67,11 @@ namespace NewsAggregator.API.Controllers
             return Ok();
         }
 
-        [HttpGet("harbrss")]
+        [HttpGet("habrss")]
         public async Task<IActionResult> FetchDataHabrRss()
         {
-            await _newsService.FetchNews(harbrss);
+            await _newsService.FetchNews(habrss);
             return Ok();
-        }
-
-        [HttpGet("test1")]
-        public string Test1()
-        {
-            return "test";
         }
 
     }
