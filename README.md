@@ -9,7 +9,7 @@
 
 ### Стек технологий:
 - База данных: PostgreSQL
-- ASP .NET Core 8 (REST API)
+- ASP Core 8 (REST API)
 - Entity Framework
 - Material Design
 - Angular
