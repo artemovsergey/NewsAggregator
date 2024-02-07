@@ -98,7 +98,7 @@ COPY ["./publish", "."]
 ENTRYPOINT ["dotnet", "NewsAggregator.API.dll"]
 # ENTRYPOINT ["dotnet", "NewsAggregator.API.dll", "--urls", "http://localhost:7281"]
 ```
-# Запустыить сборку контейнеров
+# Запустить сборку контейнеров
 ```
 > docker-compose up --build
 ```
