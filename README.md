@@ -1,3 +1,10 @@
+# Запустить сборку контейнеров
+```
+> git clone https://github.com/artemovsergey/NewsAggregator.git
+> docker-compose up --build
+```
+Открыть приложение на http://localhost:80
+
 # Техническое задание
 
 Нужно написать REST API агрегатор новостей
@@ -98,11 +105,7 @@ COPY ["./publish", "."]
 ENTRYPOINT ["dotnet", "NewsAggregator.API.dll"]
 # ENTRYPOINT ["dotnet", "NewsAggregator.API.dll", "--urls", "http://localhost:7281"]
 ```
-# Запустить сборку контейнеров
-```
-> docker-compose up --build
-```
-Открыть приложение на http://localhost:80
+
 
 
 
