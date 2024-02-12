@@ -4,7 +4,11 @@ using System.Net;
 using System.Security.Cryptography;
 using System.ServiceModel.Syndication;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml;
+using static System.Net.Mime.MediaTypeNames;
+using System.Text.RegularExpressions;
+
 
 namespace NewsAggregator.Infrastucture.Services;
 
@@ -22,12 +26,15 @@ public class NewsService : INewsService
 
         var feed = Fetch(url);
 
+        Regex regex = new Regex(@"^[А-ЯЁ][^.]*\.", RegexOptions.None);
+
+
         foreach (var item in feed.Items)
         {
             var news = new News()
             {
                 Title = item.Title.Text,
-                Content = item.Summary.Text,
+                Content = ExtractFirstSentenceAfterCapitalLetter(item.Summary.Text),
                 DatePublic = item.PublishDate.Date,
                 Link = item.Links.First().Uri.ToString(),
                 Hash = await HashNews(item.Title.Text)
@@ -88,6 +95,26 @@ public class NewsService : INewsService
                                          sortOrder,
                                          filterColumn,
                                          filterQuery);
+    }
+
+
+    static string ExtractFirstSentenceAfterCapitalLetter(string text)
+    {
+        // Поиск первой русской заглавной буквы
+        Match match = Regex.Match(text, @"[АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ]");
+        if (match.Success)
+        {
+            // Обрезка текста до найденной заглавной буквы
+            string trimmedText = text.Substring(match.Index);
+
+            // Поиск первого предложения с помощью регулярного выражения
+            Match sentenceMatch = Regex.Match(trimmedText, @"^[^.!?]*[.!?]+");
+            if (sentenceMatch.Success)
+            {
+                return sentenceMatch.Value;
+            }
+        }
+        return string.Empty;
     }
 
 }

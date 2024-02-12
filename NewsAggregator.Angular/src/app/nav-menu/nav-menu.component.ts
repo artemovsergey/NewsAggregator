@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-menu',
@@ -9,7 +10,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 export class NavMenuComponent {
   isLoadingHabr = false;
   isLoadingLenta = false;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router,) { }
 
 
   parseHabr() {
@@ -19,6 +20,7 @@ export class NavMenuComponent {
         // Обработка полученных данных
         console.log(data);
         this.isLoadingHabr = false;
+        location.reload();
       },
       (error) => {
         // Обработка ошибки
@@ -26,6 +28,7 @@ export class NavMenuComponent {
         this.isLoadingHabr = false;
       }
     );
+
   }
 
   parseLenta() {
@@ -35,6 +38,7 @@ export class NavMenuComponent {
         // Обработка полученных данных
         console.log(data);
         this.isLoadingLenta = false;
+        location.reload();
       },
       (error) => {
         // Обработка ошибки
@@ -42,6 +46,7 @@ export class NavMenuComponent {
         this.isLoadingLenta = false;
       }
     );
+
   }
 
 

@@ -2,19 +2,17 @@
 
   <mat-toolbar color="primary">
 
-    <p>
-      <a mat-flat-button color = "white" [style]="{'background-color': isLoadingHabr ? 'white' : 'primary'}" (click)="parseHabr()" [disabled]="isLoadingHabr">
+
+      <a style="margin:10px" mat-flat-button color = "white" [style]="{'background-color': isLoadingHabr ? 'white' : 'primary'}" (click)="parseHabr()" [disabled]="isLoadingHabr">
         {{ isLoadingHabr ? 'Загрузка' : 'Habr.com' }}   
       </a>
-    </p>
-    <br>
-    <br>
-    <br>
-    <p>
-      <a mat-flat-button color = "white" [style]="{'background-color': isLoadingLenta ? 'white' : 'primary'}" (click)="parseLenta()" [disabled]="isLoadingLenta" >
+  
+
+  
+      <a style="margin:10px" mat-flat-button color = "white" [style]="{'background-color': isLoadingLenta ? 'white' : 'primary'}" (click)="parseLenta()" [disabled]="isLoadingLenta" >
         {{ isLoadingLenta ? 'Загрузка' : 'Lenta.ru' }} 
       </a>
-    </p>
+
 
   </mat-toolbar>
 
