@@ -20,7 +20,6 @@
 - Entity Framework
 - Material Design
 - Angular
-- Entity Framework
 - Docker Compose
 
 # Docker Compose
